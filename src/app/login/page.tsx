@@ -30,6 +30,7 @@ export default function LoginPage() {
           <CardTitle>Login AgenWeb</CardTitle>
         </CardHeader>
         <CardContent>
+          <h1>Por favor, substitua suas credenciais de autenticação depois de simular.</h1>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label htmlFor="username">Usuário</label>

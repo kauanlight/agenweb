@@ -72,7 +72,7 @@ export default function TeamManagement() {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="flex items-center">
-          <Users className="mr-2" /> Colaboradores
+          <Users className="mr-2" /> <h1>Gerenciar Colaboradores</h1>
         </CardTitle>
         <Dialog 
           open={isAddMemberDialogOpen} 
@@ -85,7 +85,7 @@ export default function TeamManagement() {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Adicionar Colaborador</DialogTitle>
+              <DialogTitle><h1>Adicionar Colaborador</h1></DialogTitle>
             </DialogHeader>
             <div className="space-y-4 py-4">
               <div>

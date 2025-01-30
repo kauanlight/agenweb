@@ -24,6 +24,7 @@ export default function SettingsPage() {
     <div className="container py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Configurações</h1>
+        <h1 className="text-lg font-bold">Gerencie suas configurações</h1>
         <p className="text-muted-foreground">
           Gerencie as configurações do seu assistente
         </p>

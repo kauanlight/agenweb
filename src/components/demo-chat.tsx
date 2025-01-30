@@ -23,12 +23,12 @@ const demoMessages: Message[] = [
   },
   { 
     id: 2, 
-    text: "Quero informações sobre um pedido.", 
+    text: "Quero informações sobre o meu pedido.", 
     sender: 'user' 
   },
   { 
     id: 3, 
-    text: "Claro! Pode me fornecer o número do pedido?", 
+    text: "Pode fornecer o número do pedido?", 
     sender: 'ai' 
   }
 ]
@@ -112,7 +112,7 @@ export function DemoChat() {
                   }
                 `}
               >
-                {msg.text}
+                <h1>{msg.text}</h1>
               </div>
             </motion.div>
           ))}

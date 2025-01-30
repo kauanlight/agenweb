@@ -89,6 +89,8 @@ export default function OnboardingModal() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="bg-gray-50 p-4 rounded-lg">
+            <h1>Bem-vindo ao AgenWeb!</h1>
+            <h1>Vamos configurar seu primeiro assistente virtual.</h1>
             <p className="text-gray-700">
               {ONBOARDING_STEPS[currentStep].content}
             </p>

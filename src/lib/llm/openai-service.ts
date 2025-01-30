@@ -27,6 +27,7 @@ export class OpenAIService {
 
     if (!apiKey) {
       console.warn('⚠️ OPENAI_API_KEY não configurada. Usando modo de demonstração.')
+      console.log('<h1>Configuração inicializada com sucesso. Usando a demonstração.</h1>')
       return
     }
 

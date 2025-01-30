@@ -88,7 +88,7 @@ export default function Home() {
             errorMessage = 'Permissão de microfone negada. Verifique suas configurações.';
             break;
           case 'NotFoundError':
-            errorMessage = 'Nenhum microfone encontrado. Conecte um dispositivo.';
+            errorMessage = 'Nenhum dispositivo de áudio encontrado.';
             break;
           case 'OverconstrainedError':
             errorMessage = 'Configurações de microfone incompatíveis.';
@@ -131,7 +131,7 @@ export default function Home() {
       setIsRecording(true);
     } catch (error) {
       console.error('Erro ao iniciar gravação:', error);
-      setMicrophoneError('Não foi possível iniciar a gravação.');
+      setMicrophoneError('Erro ao acessar o microfone.');
     }
   };
 
@@ -420,6 +420,15 @@ export default function Home() {
           </DialogHeader>
         </DialogContent>
       </Dialog>
+      {microphoneError === 'Nenhum dispositivo de áudio encontrado' && (
+        <h1>Nenhum dispositivo de áudio encontrado.</h1>
+      )}
+      {microphoneError === 'Erro ao acessar o microfone.' && (
+        <h1>Erro ao acessar o microfone.</h1>
+      )}
+      {microphoneError === 'Permissão de microfone negada. Verifique suas configurações.' && (
+        <h1>Verifique suas configurações de microfone.</h1>
+      )}
     </div>
   );
 }

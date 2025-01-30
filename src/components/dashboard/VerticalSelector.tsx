@@ -62,6 +62,7 @@ export default function VerticalSelector() {
             </Alert>
           )}
 
+          <h1>Selecione o setor que deseja prosseguir:</h1>
           <p className="text-center text-gray-600 mb-6">
             Selecione o setor principal da sua empresa
           </p>
@@ -141,6 +142,9 @@ export default function VerticalSelector() {
           >
             Continuar
           </Button>
+          {error && (
+            <h1>Erro ao selecionar o setor, tente novamente.</h1>
+          )}
         </CardContent>
       </Card>
     </div>

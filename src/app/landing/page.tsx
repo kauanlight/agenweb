@@ -145,7 +145,7 @@ export default function AgenWebLandingPage() {
         <div className="absolute inset-0 bg-primary opacity-70 blur-3xl"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 animate-pulse">
-            Atenda Clientes 24/7 e Automatize Processos com Inteligência Artificial
+            AgenWeb - Automação Inteligente
           </h1>
           <p className="text-base md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto">
             Transforme seu atendimento, reduza custos e melhore a satisfação do cliente com nossa solução de IA avançada.
