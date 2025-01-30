@@ -23,7 +23,7 @@ export default function VerticalSelector() {
     currentUser: currentUser?.name,
     selectedVertical,
     availableVerticals,
-    isOnboardingComplete: localStorage.getItem('assistpro_onboarding_complete')
+    isOnboardingComplete: localStorage.getItem('agenweb_onboarding_complete')
   })
 
   const handleVerticalSelection = () => {
@@ -50,7 +50,7 @@ export default function VerticalSelector() {
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-center">
-            Bem-vindo ao AssistPro AI, {currentUser.name}!
+            Bem-vindo ao AgenWeb, {currentUser.name}!
           </CardTitle>
         </CardHeader>
         <CardContent>

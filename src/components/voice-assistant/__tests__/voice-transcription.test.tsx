@@ -117,4 +117,23 @@ describe('VoiceTranscription', () => {
       expect(screen.getByText('Erro de Gravação')).toBeInTheDocument();
     });
   });
+
+  it('deve renderizar todos os itens do menu quando a sidebar está colapsada', async () => {
+    render(
+      <>
+        <VoiceTranscription />
+        <Toaster />
+      </>
+    );
+
+    // Simular colapso da sidebar
+    const sidebarToggle = screen.getByLabelText('Toggle menu');
+    fireEvent.click(sidebarToggle);
+
+    const menuItems = ['Visão Geral', 'Assistentes', 'Números de Telefone', 'Fluxos de Conversação', 'Biblioteca', 'Logs', 'Análise Técnica'];
+
+    menuItems.forEach(item => {
+      expect(screen.getByText(item)).toBeInTheDocument();
+    });
+  });
 });

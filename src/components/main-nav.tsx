@@ -95,7 +95,7 @@ export default function MainNavigation() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-primary">AssistPro AI</span>
+            <span className="text-2xl font-bold text-primary">AgenWeb</span>
           </Link>
         </div>
 

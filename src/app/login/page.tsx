@@ -27,7 +27,7 @@ export default function LoginPage() {
     <div className="flex justify-center items-center min-h-screen">
       <Card className="w-[350px]">
         <CardHeader>
-          <CardTitle>Login AssistPro</CardTitle>
+          <CardTitle>Login AgenWeb</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">

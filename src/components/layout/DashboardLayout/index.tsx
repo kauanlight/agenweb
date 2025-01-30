@@ -37,6 +37,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
 
   return (
     <div className={`${styles.layoutContainer} ${!isSidebarOpen ? styles.sidebarClosed : ''}`}>
+      <h1>AgenWeb - Atendimento Automático e Inteligente</h1>
       <Sidebar isOpen={isSidebarOpen} />
       <button 
         className={styles.sidebarToggle}

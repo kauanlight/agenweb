@@ -19,10 +19,10 @@ import {
 
 const ONBOARDING_STEPS = [
   {
-    title: 'Bem-vindo ao AssistPro AI',
+    title: 'Bem-vindo ao AgenWeb',
     description: 'Vamos configurar seu primeiro assistente virtual',
     icon: MessageCircle,
-    content: 'O AssistPro AI permite criar assistentes inteligentes para diversos setores, como saúde, educação e atendimento ao cliente.'
+    content: 'O AgenWeb permite criar assistentes inteligentes para diversos setores, como saúde, educação e atendimento ao cliente.'
   },
   {
     title: 'Configuração Inicial',
@@ -49,7 +49,7 @@ export default function OnboardingModal() {
   const [currentStep, setCurrentStep] = useState(0)
 
   useEffect(() => {
-    const hasCompletedOnboarding = localStorage.getItem('assistpro_onboarding_completed')
+    const hasCompletedOnboarding = localStorage.getItem('agenweb_onboarding_completed')
     if (!hasCompletedOnboarding) {
       setIsOpen(true)
     }
@@ -68,7 +68,7 @@ export default function OnboardingModal() {
   }
 
   const handleFinishOnboarding = () => {
-    localStorage.setItem('assistpro_onboarding_completed', 'true')
+    localStorage.setItem('agenweb_onboarding_completed', 'true')
     setIsOpen(false)
   }
 
@@ -125,7 +125,7 @@ export default function OnboardingModal() {
           <Button 
             variant="ghost" 
             onClick={() => {
-              localStorage.setItem('assistpro_onboarding_completed', 'true')
+              localStorage.setItem('agenweb_onboarding_completed', 'true')
               setIsOpen(false)
             }}
           >

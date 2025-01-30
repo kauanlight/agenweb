@@ -42,7 +42,7 @@ export default function TeamManagement() {
     {
       id: '1',
       name: 'Kauan Guedes',
-      email: 'kauan@assistpro.ai',
+      email: 'kauan@agenweb.ai',
       role: 'admin'
     }
   ])

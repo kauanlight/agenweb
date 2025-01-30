@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { DashboardLayout } from '../index';
+import DashboardLayout from '../index';
 
 describe('DashboardLayout', () => {
   it('should render the layout correctly', () => {
@@ -51,5 +51,25 @@ describe('DashboardLayout', () => {
     expect(container).toBeInTheDocument();
     expect(sidebar).toBeInTheDocument();
     expect(mainContent).toBeInTheDocument();
+  });
+
+  it('should render all menu items in sidebar when collapsed', () => {
+    render(<DashboardLayout>Test Content</DashboardLayout>);
+    const sidebarToggle = screen.getByLabelText('Toggle menu');
+    fireEvent.click(sidebarToggle);
+
+    const menuItems = [
+      'Visão Geral',
+      'Assistentes',
+      'Números de Telefone',
+      'Fluxos de Conversação',
+      'Biblioteca',
+      'Logs',
+      'Análise técnica'
+    ];
+
+    menuItems.forEach(item => {
+      expect(screen.getByText(item)).toBeInTheDocument();
+    });
   });
 });

@@ -23,7 +23,7 @@ import {
 import { DemoChat } from "@/components/demo-chat"
 import Image from "next/image"
 
-export default function AssistProLandingPage() {
+export default function AgenWebLandingPage() {
   const features = [
     { 
       title: "Automação Inteligente", 
@@ -82,13 +82,13 @@ export default function AssistProLandingPage() {
     {
       name: "Carlos Silva",
       role: "CEO, E-commerce Brasil",
-      quote: "A AssistPro AI revolucionou nosso atendimento. Reduzimos em 50% o tempo de resposta e aumentamos a satisfação do cliente.",
+      quote: "A AgenWeb revolucionou nosso atendimento. Reduzimos em 50% o tempo de resposta e aumentamos a satisfação do cliente.",
       avatar: "/images/testimonial-1.jpg"
     },
     {
       name: "Ana Santos",
       role: "Diretora de Operações, Clínica Médica Premium",
-      quote: "Implementar o AssistPro AI foi transformador. Nossos pacientes agora têm suporte 24/7 e nossa equipe pode focar em casos mais complexos.",
+      quote: "Implementar o AgenWeb foi transformador. Nossos pacientes agora têm suporte 24/7 e nossa equipe pode focar em casos mais complexos.",
       avatar: "/images/testimonial-2.jpg"
     },
     {
@@ -163,7 +163,7 @@ export default function AssistProLandingPage() {
               </DialogTrigger>
               <DialogContent className="max-w-4xl">
                 <DialogHeader>
-                  <DialogTitle>Experimente o AssistPro AI</DialogTitle>
+                  <DialogTitle>Experimente o AgenWeb</DialogTitle>
                   <DialogDescription>
                     Veja como nossa IA pode transformar seu atendimento em minutos
                   </DialogDescription>
@@ -185,7 +185,7 @@ export default function AssistProLandingPage() {
 
       {/* Seção Benefícios */}
       <section className="max-w-6xl mx-auto py-16 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Por que escolher AssistPro AI?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Por que escolher AgenWeb?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon
@@ -313,7 +313,7 @@ export default function AssistProLandingPage() {
 
       {/* Footer */}
       <footer className="bg-primary text-white py-8 text-center">
-        <p>&copy; 2025 AssistPro AI. Todos os direitos reservados.</p>
+        <p>&copy; 2025 AgenWeb. Todos os direitos reservados.</p>
       </footer>
     </div>
   )

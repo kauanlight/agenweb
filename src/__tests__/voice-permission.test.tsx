@@ -62,7 +62,7 @@ describe('Teste de Permissão de Microfone', () => {
     
     // Verificar elementos principais
     expect(screen.getByText(/Transforme seu Atendimento com IA/i)).toBeInTheDocument()
-    expect(screen.getByText(/AssistPro AI/i)).toBeInTheDocument()
+    expect(screen.getByText(/AgenWeb/i)).toBeInTheDocument()
   })
 
   test('Botão de microfone deve estar visível', () => {

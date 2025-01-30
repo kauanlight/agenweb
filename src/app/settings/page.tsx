@@ -85,7 +85,7 @@ export default function SettingsPage() {
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="assistant-name">Nome do Assistente</Label>
-                <Input id="assistant-name" placeholder="AssistPro" />
+                <Input id="assistant-name" placeholder="AgenWeb" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="personality">Personalidade</Label>

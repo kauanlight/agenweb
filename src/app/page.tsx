@@ -29,7 +29,6 @@ export default function Home() {
   const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
-    // Check if user has completed onboarding
     const hasCompletedOnboarding = localStorage.getItem('onboardingCompleted');
     if (!hasCompletedOnboarding) {
       setShowOnboarding(true);
@@ -37,11 +36,8 @@ export default function Home() {
   }, []);
 
   const handleOnboardingComplete = (data: OnboardingData) => {
-    // Save onboarding data
     localStorage.setItem('onboardingCompleted', 'true');
     localStorage.setItem('onboardingData', JSON.stringify(data));
-    
-    // Close modal and redirect to dashboard
     setShowOnboarding(false);
     router.push('/dashboard');
   };
@@ -59,7 +55,6 @@ export default function Home() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
 
-  // Configurações do agente de demonstração
   const demoAgent = {
     id: 'demo-agent-001',
     name: 'AssistPro Demo',
@@ -75,22 +70,17 @@ export default function Home() {
     supportedLanguages: [LanguageCode.PT_BR]
   };
 
-  // Verificação de permissão de microfone
-  const checkMicrophonePermission = async () => {
+  const handleMicrophoneAccess = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const tracks = stream.getAudioTracks();
-      
       if (tracks.length === 0) {
         throw new Error('Nenhum dispositivo de áudio encontrado');
       }
-
       stream.getTracks().forEach(track => track.stop());
       setMicrophoneError(null);
-      return true;
     } catch (error) {
       console.error('Erro de permissão de microfone:', error);
-      
       let errorMessage = 'Não foi possível acessar o microfone.';
       if (error instanceof DOMException) {
         switch (error.name) {
@@ -106,37 +96,28 @@ export default function Home() {
         }
       }
       setMicrophoneError(errorMessage);
-      return false;
     }
   };
 
-  // Iniciar gravação de áudio
-  const startRecording = async () => {
-    const hasPermission = await checkMicrophonePermission();
-    if (!hasPermission) return;
+  useEffect(() => {
+    handleMicrophoneAccess();
+  }, []);
 
+  const startRecording = async () => {
+    if (microphoneError) return;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ 
-        audio: {
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true
-        } 
+        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true }
       });
-      
       mediaRecorderRef.current = new MediaRecorder(stream);
       audioChunksRef.current = [];
-
       mediaRecorderRef.current.ondataavailable = (event) => {
         audioChunksRef.current.push(event.data);
       };
-
       mediaRecorderRef.current.onstop = async () => {
         const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
-        
         try {
           const transcription = await openaiService.transcribeAudio(audioBlob);
-          
           if (transcription) {
             setMessage(transcription);
             await handleSendMessage(transcription);
@@ -146,7 +127,6 @@ export default function Home() {
           setMicrophoneError('Não foi possível transcrever o áudio.');
         }
       };
-
       mediaRecorderRef.current.start();
       setIsRecording(true);
     } catch (error) {
@@ -155,7 +135,6 @@ export default function Home() {
     }
   };
 
-  // Parar gravação de áudio
   const stopRecording = () => {
     if (mediaRecorderRef.current?.state !== 'inactive') {
       mediaRecorderRef.current?.stop();
@@ -163,36 +142,25 @@ export default function Home() {
     }
   };
 
-  // Enviar mensagem
   const handleSendMessage = async (inputMessage?: string) => {
     const currentMessage = inputMessage || message;
     if (!currentMessage.trim()) return;
-
     const newConversation = [
-      ...conversation, 
+      ...conversation,
       { role: 'user', content: currentMessage }
     ];
     setConversation(newConversation);
     setMessage('');
     setIsLoading(true);
-
     try {
       const context = conversation
         .map(msg => `${msg.role}: ${msg.content}`)
         .join('\n');
-
-      const response = await openaiService.generateResponse(
-        demoAgent, 
-        context, 
-        currentMessage
-      );
-
+      const response = await openaiService.generateResponse(demoAgent, context, currentMessage);
       setConversation(prev => [
-        ...prev, 
+        ...prev,
         { role: 'assistant', content: response }
       ]);
-
-      // Sintetizar resposta em voz
       try {
         const audioBlob = await openaiService.synthesizeSpeech(response);
         const audioUrl = URL.createObjectURL(audioBlob);
@@ -204,7 +172,7 @@ export default function Home() {
     } catch (error) {
       console.error('Erro ao gerar resposta:', error);
       setConversation(prev => [
-        ...prev, 
+        ...prev,
         { role: 'assistant', content: 'Desculpe, ocorreu um erro. Tente novamente.' }
       ]);
     } finally {
@@ -212,7 +180,6 @@ export default function Home() {
     }
   };
 
-  // Seções de recursos
   const capabilities = [
     {
       icon: Bot,
@@ -387,7 +354,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">AssistPro AI</h3>
+              <h3 className="text-xl font-bold mb-4">AgenWeb</h3>
               <p className="text-gray-600">Revolucionando o atendimento com inteligência artificial</p>
             </div>
             <div>

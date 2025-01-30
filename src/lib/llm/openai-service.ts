@@ -74,7 +74,7 @@ export class OpenAIService {
   private mockResponse(agent: Agent, userMessage: string): string {
     const mockResponses = [
       "Olá! Sou um assistente de demonstração. Minha funcionalidade completa requer uma chave de API OpenAI.",
-      "Parece que estamos no modo de demonstração. Gostaria de saber mais sobre como configurar o AssistPro AI?",
+      "Parece que estamos no modo de demonstração. Gostaria de saber mais sobre como configurar o AgenWeb?",
       "Desculpe, estou com capacidades limitadas no momento. Precisamos configurar a chave de API OpenAI."
     ]
 

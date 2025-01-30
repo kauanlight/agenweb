@@ -86,7 +86,7 @@ export function DemoChat() {
       <div className="bg-gradient-primary p-4 text-white flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <RefreshCwIcon className="animate-spin-slow" size={20} />
-          <span>AssistPro AI Demo</span>
+          <span>AgenWeb Demo</span>
         </div>
       </div>
 

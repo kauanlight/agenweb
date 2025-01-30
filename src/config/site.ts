@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "AssistPro AI",
+  name: "AgenWeb",
   description: "Assistente de IA para atendimento inteligente",
   links: {
     github: "https://github.com/seu-usuario/assistpro-ai",
