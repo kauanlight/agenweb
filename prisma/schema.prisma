@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum AgentType {
+  CUSTOMER_SUPPORT
+  SALES
+  TECHNICAL
+  HR
+  GENERAL
+}
+
+enum LanguageCode {
+  PT_BR
+  EN_US
+  ES_ES
+}
+
+enum DataSourceType {
+  CSV
+  PDF
+  WEBSITE
+  DATABASE
+  MANUAL
+}
+
+enum PersonalityTrait {
+  PROFESSIONAL
+  FRIENDLY
+  TECHNICAL
+  EMPATHETIC
+}
+
+model Agent {
+  id                  String           @id @default(uuid())
+  name                String
+  description         String?
+  type                AgentType
+  primaryLanguage     LanguageCode
+  supportedLanguages  LanguageCode[]
+  
+  dataSources         DataSource[]
+  personalityTraits   PersonalityTrait[]
+  
+  maxContextTokens    Int               @default(2048)
+  temperature         Float             @default(0.7)
+  
+  isActive            Boolean           @default(true)
+  
+  webhookUrl          String?
+  apiKeys             Json?
+  
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+  
+  conversations       Conversation[]
+}
+
+model DataSource {
+  id        String           @id @default(uuid())
+  type      DataSourceType
+  uri       String
+  lastSync  DateTime?
+  agent     Agent            @relation(fields: [agentId], references: [id])
+  agentId   String
+}
+
+model Conversation {
+  id        String           @id @default(uuid())
+  agent     Agent            @relation(fields: [agentId], references: [id])
+  agentId   String
+  
+  messages  Message[]
+  
+  startedAt DateTime        @default(now())
+  endedAt   DateTime?
+}
+
+model Message {
+  id             String         @id @default(uuid())
+  conversation   Conversation   @relation(fields: [conversationId], references: [id])
+  conversationId String
+  
+  content        String
+  role           String         @default("user")
+  
+  createdAt      DateTime       @default(now())
+}

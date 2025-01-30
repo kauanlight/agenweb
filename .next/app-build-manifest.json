@@ -1,0 +1,57 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--f40b9f.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_link_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_x_js-_app-pages-browser_n-f10306.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_alert-triangle_js-_app-pa-a7e3de.js",
+      "static/chunks/_app-pages-browser_src_components_ui_button_tsx-_app-pages-browser_src_components_ui_dialog_t-c62cda.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/[locale]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--f40b9f.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_link_js.js",
+      "static/chunks/app/[locale]/page.js"
+    ],
+    "/[locale]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next-intl_dist_esm_shared_NextIntlClientProvider_js-_-6123f1.js",
+      "static/css/app/[locale]/layout.css",
+      "static/chunks/app/[locale]/layout.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--f40b9f.js",
+      "static/css/app/dashboard/page.css",
+      "static/chunks/app/dashboard/page.js"
+    ],
+    "/dashboard/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--f40b9f.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_link_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_x_js-_app-pages-browser_n-f10306.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_archive_js-_app-pages-bro-039004.js",
+      "static/chunks/_app-pages-browser_src_components_ui_button_tsx-_app-pages-browser_src_components_ui_dialog_t-c62cda.js",
+      "static/chunks/app/dashboard/layout.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
+    ]
+  }
+}

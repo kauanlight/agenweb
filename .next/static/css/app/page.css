@@ -1,0 +1,171 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/onboarding/styles.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.styles_overlay__t8H7y {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.styles_modal__Dg_ew {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: styles_modalAppear__EdUPm 0.3s ease-out;
+}
+
+@keyframes styles_modalAppear__EdUPm {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.styles_closeButton__FMLSO {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.styles_closeButton__FMLSO:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.styles_content__7lN9O {
+  padding: 32px;
+}
+
+.styles_steps__2Qrqx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.styles_step__gyVUJ {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.styles_step__gyVUJ.styles_active__nw0GH {
+  background-color: #4fd1c5;
+  color: #fff;
+}
+
+.styles_stepLine__BpSLj {
+  width: 60px;
+  height: 2px;
+  background-color: #2a2a2a;
+  margin: 0 8px;
+}
+
+.styles_step1__12_As, .styles_step2__OXMaI {
+  text-align: center;
+}
+
+.styles_title__FkO6p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.styles_options__LEwKt {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.styles_option__XVpUQ {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+  text-align: center;
+}
+
+.styles_option__XVpUQ:hover {
+  background-color: #2a2a2a;
+}
+
+.styles_option__XVpUQ.styles_selected__q6SFL {
+  border-color: #4fd1c5;
+  background-color: rgba(79, 209, 197, 0.1);
+}
+
+.styles_actions__xxMNk {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.styles_backButton__DXn7H, .styles_nextButton__yWCFa {
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.styles_backButton__DXn7H {
+  background: none;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+}
+
+.styles_backButton__DXn7H:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.styles_nextButton__yWCFa {
+  background-color: #4fd1c5;
+  border: none;
+  color: #fff;
+}
+
+.styles_nextButton__yWCFa:hover {
+  background-color: #3bb3a7;
+}
+
+.styles_nextButton__yWCFa:disabled {
+  background-color: #2a2a2a;
+  cursor: not-allowed;
+}
+
